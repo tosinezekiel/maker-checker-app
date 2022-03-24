@@ -17,10 +17,10 @@ class ProfileService {
 
     public function save() : Collection
     {
-        return $this->proccessDocumentData();
+        return $this->processDocumentData();
     }
 
-    public function proccessDocumentData() : Collection
+    public function processDocumentData() : Collection
     {
         $extractedData = $this->extractData();
 
