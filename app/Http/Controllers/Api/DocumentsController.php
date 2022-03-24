@@ -39,7 +39,7 @@ class DocumentsController extends Controller
     public function create(CreateRequest $request)
     {
         $data = $this->documentService
-            ->setData($request->only(['first_name', 'last_name', 'email']), Type::CREATE)
+            ->setData($request->validated(), Type::CREATE)
             ->buildData()
             ->save();
 
@@ -52,7 +52,7 @@ class DocumentsController extends Controller
     public function update(CreateRequest $request, Profile $profile) : JsonResponse
     {
         $data = $this->documentService
-            ->setData($request->only(['first_name', 'last_name', 'email']), Type::UPDATE)
+            ->setData($request->validated(), Type::UPDATE)
             ->buildData($profile->id)
             ->save();
 
